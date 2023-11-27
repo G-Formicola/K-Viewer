@@ -4,7 +4,8 @@ window.config = {
   extensions: [],
   modes: [],
   customizationService: {},
-  showStudyList: true,
+  // changed to false for not going back to studyList when openend
+  showStudyList: false,
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
   // below flag is for performance reasons, but it might not work for all servers
@@ -21,6 +22,8 @@ window.config = {
   },
   // filterQueryParam: false,
   defaultDataSourceName: 'dicomweb',
+  // Aggiunto per aggirare cross-origin isolation
+  useSharedArrayBuffer: 'FALSE',
   /* Dynamic config allows user to pass "configUrl" query string this allows to load config without recompiling application. The regex will ensure valid configuration source */
   // dangerouslyUseDynamicConfig: {
   //   enabled: true,
