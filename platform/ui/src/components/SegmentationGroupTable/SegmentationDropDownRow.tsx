@@ -45,23 +45,23 @@ function SegmentationDropDownRow({
           list={[
             ...(!disableEditing
               ? [
-                  {
-                    title: 'Add New Segmentation',
-                    onClick: () => {
-                      onSegmentationAdd();
-                    },
+                {
+                  title: 'Add New Segmentation',
+                  onClick: () => {
+                    onSegmentationAdd();
                   },
-                ]
+                },
+              ]
               : []),
             ...(!disableEditing
               ? [
-                  {
-                    title: 'Rename',
-                    onClick: () => {
-                      onSegmentationEdit(activeSegmentation.id);
-                    },
+                {
+                  title: 'Rename',
+                  onClick: () => {
+                    onSegmentationEdit(activeSegmentation.id);
                   },
-                ]
+                },
+              ]
               : []),
             {
               title: 'Delete',
@@ -69,27 +69,11 @@ function SegmentationDropDownRow({
                 onSegmentationDelete(activeSegmentation.id);
               },
             },
-            ...(!disableEditing
-              ? [
-                  {
-                    title: 'Export DICOM SEG',
-                    onClick: () => {
-                      storeSegmentation(activeSegmentation.id);
-                    },
-                  },
-                ]
-              : []),
             ...[
               {
                 title: 'Download DICOM SEG',
                 onClick: () => {
                   onSegmentationDownload(activeSegmentation.id);
-                },
-              },
-              {
-                title: 'Download DICOM RTSTRUCT',
-                onClick: () => {
-                  onSegmentationDownloadRTSS(activeSegmentation.id);
                 },
               },
             ],
